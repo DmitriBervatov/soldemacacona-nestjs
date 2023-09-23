@@ -4,8 +4,9 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   app.enableCors({
-    origin: ['http://localhost:4000'], // URL del front
+    origin: ['http://localhost:5173'], // URL del front
     methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
     preflightContinue: false,
     optionsSuccessStatus: 204,
   });

@@ -20,13 +20,25 @@ export class ExportService {
 
     worksheet.columns = [
       { header: 'ID', key: 'id', width: 10 },
+      { header: 'Nombre', key: 'name', width: 50 },
       { header: 'Email', key: 'email', width: 30 },
+      { header: 'Mensaje', key: 'message', width: 60 },
+      { header: 'Telefono', key: 'phone', width: 30 },
+      { header: 'DNI', key: 'dni', width: 30 },
+      { header: 'Terminos', key: 'terms', width: 30 },
+      { header: 'Promociones', key: 'promotions', width: 30 },
     ];
 
     subscribers.forEach((sub) => {
       worksheet.addRow({
         id: sub.id,
+        name: sub.name,
         email: sub.email,
+        message: sub.message,
+        dni: sub.dni,
+        phone: sub.phone,
+        terms: sub.terms,
+        promotions: sub.promotions,
       });
     });
 
